@@ -1,0 +1,217 @@
+.butalert {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  --ba-bg-panel: #fff;
+
+  --ba-text-close-button: #666;
+  --ba-bg-close-button: transparent;
+  --ba-bg-close-button\:hover: rgba(0, 0, 0, 0.1);
+  --ba-bg-backdrop: rgba(0, 0, 0, 0.3);
+
+  --ba-text-icon: #000;
+  --ba-bg-icon: rgba(0, 0, 0, 0.05);
+
+  --ba-text-title: #000;
+  --ba-text-description: #888;
+}
+
+.butalert__panel {
+  position: relative;
+  z-index: 1;
+  background-color: var(--ba-bg-panel);
+  width: 100%;
+  border-radius: 16px;
+}
+
+.butalert--sm .butalert__panel {
+  max-width: 400px;
+}
+.butalert--md .butalert__panel {
+  max-width: 500px;
+}
+.butalert--lg .butalert__panel {
+  max-width: 600px;
+}
+
+.butalert__content,
+.butalert__header,
+.butalert__footer {
+  padding: 24px 36px;
+}
+
+.butalert__content {
+  display: flex;
+  flex-direction: column;
+  text-align: inherit;
+}
+
+.butalert__content__icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ba-text-icon);
+  background-color: var(--ba-bg-icon);
+  border-radius: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.butalert__content__icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.butalert__content__title,
+.butalert__header__title {
+  color: var(--ba-text-title);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.butalert__content__desc,
+.butalert__header__desc {
+  color: var(--ba-text-description);
+  font-size: 16;
+  font-weight: 400;
+}
+
+.butalert__header {
+  padding-bottom: 0;
+}
+
+.butalert__footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.butalert__backdrop {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-color: var(--ba-bg-backdrop);
+}
+
+/********** Icon Button **********/
+.butalert__close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  color: var(--ba-text-close-button);
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.butalert__close-button:hover {
+  background-color: var(--ba-bg-close-button\:hover);
+}
+
+/********** Button **********/
+.butalert__button {
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+/* Button Variants */
+.butalert__button--default {
+  color: #000;
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.butalert__button--default:hover {
+  background-color: #eee;
+}
+
+.butalert__button--primary {
+  color: #fff;
+  background-color: #3b82f6;
+}
+.butalert__button--primary:hover {
+  color: #fff;
+  background-color: #2563eb;
+}
+
+.butalert__button--success {
+  color: #fff;
+  background-color: #22c55e;
+}
+.butalert__button--success:hover {
+  color: #fff;
+  background-color: #16a34a;
+}
+
+.butalert__button--danger {
+  color: #fff;
+  background-color: #ef4444;
+}
+.butalert__button--danger:hover {
+  color: #fff;
+  background-color: #dc2626;
+}
+
+/* Button Size */
+.butalert__button--sm {
+  border-radius: 6px;
+  padding: 0px 12px;
+  height: 34px;
+  font-size: 14px;
+}
+.butalert__button--md {
+  border-radius: 8px;
+  padding: 0px 16px;
+  height: 40px;
+  font-size: 16px;
+}
+.butalert__button--lg {
+  border-radius: 10px;
+  padding: 0px 24px;
+  height: 46px;
+  font-size: 16px;
+}
+
+/* Button Extra Modifiers */
+.butalert__button--filled {
+  flex: 1;
+}
+
+/********** Utils **********/
+.butalert__text--left {
+  text-align: left;
+}
+.butalert__text--right {
+  text-align: right;
+}
+.butalert__text--center {
+  text-align: center;
+}
+
+.butalert__align-start {
+  align-items: flex-start;
+}
+.butalert__align--end {
+  align-items: flex-end;
+}
+.butalert__align--center {
+  align-items: center;
+}
