@@ -7,7 +7,7 @@ export type ButalertPopupProps = VariantProps<typeof popup> & {
   children: React.ReactNode;
   isVisible: boolean;
   showCloseButton?: boolean;
-  theme?: Partial<ButalertPopupTheme> | null;
+  classNames?: Partial<ButalertPopupClassNames> | null;
   colors?: Partial<ButalertPopupElementColors> | null;
   onClose: () => void;
 };
@@ -40,7 +40,7 @@ export type ButalertPopupElementColors = {
   bgCloseButton: string;
 };
 
-export type ButalertPopupTheme = {
+export type ButalertPopupClassNames = {
   panel: string;
   panelHeader: string;
   panelBody: string;

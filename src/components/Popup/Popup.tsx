@@ -26,7 +26,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
   children,
   showCloseButton,
   colors,
-  theme,
+  classNames,
   onClose,
 }) => {
   const motionValue = useMotionValue(0);
@@ -61,7 +61,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
         size,
         children,
         colors,
-        theme,
+        classNames,
         onClose: handleClose,
       }}
     >
@@ -76,7 +76,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
         >
           {/* Backdrop */}
           <motion.div
-            className={cn("butalert__backdrop", theme?.backdrop)}
+            className={cn("butalert__backdrop", classNames?.backdrop)}
             style={{
               opacity: motionOpacity,
             }}
@@ -86,7 +86,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
           {/* Panel */}
           <Dialog.Panel
             as={motion.div}
-            className={cn("butalert__panel", theme?.panel)}
+            className={cn("butalert__panel", classNames?.panel)}
             style={{
               scale: motionScale,
               opacity: motionOpacity,
@@ -95,7 +95,10 @@ const Popup: React.FC<ButalertPopupProps> = ({
             {/* Close Button */}
             {showCloseButton ? (
               <button
-                className={cn("butalert__close-button", theme?.closeButton)}
+                className={cn(
+                  "butalert__close-button",
+                  classNames?.closeButton
+                )}
                 aria-label="Close"
                 onClick={handleClose}
               >

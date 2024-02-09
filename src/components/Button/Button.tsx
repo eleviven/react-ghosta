@@ -8,7 +8,7 @@ const Button: React.FC<ButtonProps> = ({
   size,
   children,
   className,
-  theme,
+  classNames,
   isFilled,
   ...props
 }) => {
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       className={cn(
         "butalert__button",
-        buttonExtend({ variant, size, theme }),
+        buttonExtend({ variant, size, classNames }),
         isFilled && "butalert__button--filled",
         className
       )}

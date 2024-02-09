@@ -13,7 +13,7 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
   description,
   icon,
 }) => {
-  const { alignment, theme } = useContext(PopupContext);
+  const { alignment, classNames } = useContext(PopupContext);
 
   if (!title && !description && !icon) {
     return <div className="butalert__nocontent" />;
@@ -24,11 +24,11 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
       className={cn(
         "butalert__content",
         popupContent({ alignment }),
-        theme?.panelBody
+        classNames?.panelBody
       )}
     >
       {icon ? (
-        <div className={cn("butalert__content__icon", theme?.icon)}>
+        <div className={cn("butalert__content__icon", classNames?.icon)}>
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -39,12 +39,14 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
         </div>
       ) : null}
       {title ? (
-        <Dialog.Title className={cn("butalert__content__title", theme?.title)}>
+        <Dialog.Title
+          className={cn("butalert__content__title", classNames?.title)}
+        >
           {title}
         </Dialog.Title>
       ) : null}
       {description ? (
-        <div className={cn("butalert__content__desc", theme?.description)}>
+        <div className={cn("butalert__content__desc", classNames?.description)}>
           {description}
         </div>
       ) : null}

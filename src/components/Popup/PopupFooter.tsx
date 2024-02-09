@@ -10,7 +10,7 @@ import Button from "../Button/Button";
 import { ButalertManager } from "../../ButalertManager";
 
 const PopupFooter: React.FC<ButalertPopupFooterProps> = ({ buttons }) => {
-  const { onClose, theme } = useContext(PopupContext);
+  const { onClose, classNames } = useContext(PopupContext);
 
   if (!buttons?.length) return null;
 
@@ -22,7 +22,7 @@ const PopupFooter: React.FC<ButalertPopupFooterProps> = ({ buttons }) => {
   };
 
   return (
-    <div className={cn("butalert__footer", theme?.panelFooter)}>
+    <div className={cn("butalert__footer", classNames?.panelFooter)}>
       {buttons?.map((button, index) => {
         return (
           <Button
@@ -31,7 +31,7 @@ const PopupFooter: React.FC<ButalertPopupFooterProps> = ({ buttons }) => {
             size={button.size}
             isFilled={button.isFilled}
             onClick={() => handleClick(button)}
-            theme={theme?.button}
+            classNames={classNames?.button}
           >
             {button.title}
           </Button>

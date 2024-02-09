@@ -3,14 +3,14 @@ import type {
   ButtonVariant,
 } from "./components/Button/button.type";
 import type {
-  ButalertPopupTheme,
+  ButalertPopupClassNames,
   ButalertPopupElementColors,
   ButalertPopupProps,
   ButalertPopupAlignment,
 } from "./components/Popup/popup.type";
 
 export type ButalertProps = {
-  theme?: Partial<ButalertPopupTheme>;
+  classNames?: Partial<ButalertPopupClassNames>;
   colors?: Partial<ButalertPopupElementColors>;
 };
 
@@ -38,7 +38,7 @@ export type ButalertOptions = {
   showCloseButton?: boolean;
   size?: ButalertPopupProps["size"];
   colors?: Partial<ButalertPopupElementColors>;
-  theme?: Partial<ButalertPopupTheme>;
+  classNames?: Partial<ButalertPopupClassNames>;
 };
 
 export type ButalertButtonOptions = {

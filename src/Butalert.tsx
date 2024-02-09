@@ -14,7 +14,7 @@ import PopupHeader from "./components/Popup/PopupHeader";
 import PopupBody from "./components/Popup/PopupBody";
 import PopupFooter from "./components/Popup/PopupFooter";
 
-const Butalert: React.FC<ButalertProps> = ({ theme, colors }) => {
+const Butalert: React.FC<ButalertProps> = ({ classNames, colors }) => {
   // State
   const [popups, setPopups] = useState<ButalertOptions[]>([]);
 
@@ -65,7 +65,7 @@ const Butalert: React.FC<ButalertProps> = ({ theme, colors }) => {
       onClose={() => close(popup.id)}
       {...popup}
       colors={Object.assign({}, colors, popup.colors)}
-      theme={Object.assign({}, theme, popup.theme)}
+      classNames={Object.assign({}, classNames, popup.classNames)}
     >
       <PopupHeader
         title={popup.headerTitle}
