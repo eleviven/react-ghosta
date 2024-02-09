@@ -20,5 +20,5 @@ export function convertStringToKebap(string: string) {
 
 export function cn(...args: any[]): string {
   const filtered = args?.filter((part) => typeof part === "string");
-  return filtered?.toString() || "";
+  return filtered?.join(" ") || "";
 }
