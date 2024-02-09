@@ -1,5 +1,8 @@
-import { VariantProps } from "class-variance-authority";
-import { ButalertButtonOptions } from "../../butalert.types";
+import type { VariantProps } from "class-variance-authority";
+import type {
+  ButalertAnimationOptions,
+  ButalertButtonOptions,
+} from "../../butalert.types";
 import { popup } from "./popup.variant";
 
 export type ButalertPopupProps = VariantProps<typeof popup> & {
@@ -9,6 +12,7 @@ export type ButalertPopupProps = VariantProps<typeof popup> & {
   showCloseButton?: boolean;
   classNames?: Partial<ButalertPopupClassNames> | null;
   colors?: Partial<ButalertPopupElementColors> | null;
+  animationOptions?: Partial<ButalertAnimationOptions>;
   onClose: () => void;
 };
 

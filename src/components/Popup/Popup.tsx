@@ -27,6 +27,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
   showCloseButton,
   colors,
   classNames,
+  animationOptions,
   onClose,
 }) => {
   const motionValue = useMotionValue(0);
@@ -36,12 +37,14 @@ const Popup: React.FC<ButalertPopupProps> = ({
   const handleOpen = () => {
     animate(motionValue, 1, {
       duration: 0.25,
+      ...animationOptions?.open,
     });
   };
 
   const handleClose = () => {
     animate(motionValue, 0, {
       duration: 0.2,
+      ...animationOptions?.close,
     }).then(onClose);
   };
 

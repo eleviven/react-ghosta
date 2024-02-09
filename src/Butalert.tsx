@@ -14,7 +14,11 @@ import PopupHeader from "./components/Popup/PopupHeader";
 import PopupBody from "./components/Popup/PopupBody";
 import PopupFooter from "./components/Popup/PopupFooter";
 
-const Butalert: React.FC<ButalertProps> = ({ classNames, colors }) => {
+const Butalert: React.FC<ButalertProps> = ({
+  classNames,
+  colors,
+  animationOptions,
+}) => {
   // State
   const [popups, setPopups] = useState<ButalertOptions[]>([]);
 
@@ -66,6 +70,7 @@ const Butalert: React.FC<ButalertProps> = ({ classNames, colors }) => {
       {...popup}
       colors={Object.assign({}, colors, popup.colors)}
       classNames={Object.assign({}, classNames, popup.classNames)}
+      animationOptions={animationOptions}
     >
       <PopupHeader
         title={popup.headerTitle}

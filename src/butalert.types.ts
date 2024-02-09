@@ -12,6 +12,7 @@ import type {
 export type ButalertProps = {
   classNames?: Partial<ButalertPopupClassNames>;
   colors?: Partial<ButalertPopupElementColors>;
+  animationOptions?: Partial<ButalertAnimationOptions>;
 };
 
 export type ButalertActions = {
@@ -53,3 +54,13 @@ export type ButalertButtonOptions = {
 export type ButalertButtonActionParams = {
   butalert: ButalertActions;
 };
+
+export type ButalertAnimationOptions = Record<
+  "open" | "close",
+  {
+    delay?: number;
+    elapsed?: number;
+    type?: "decay" | "spring" | "keyframes" | "tween" | "inertia";
+    duration?: number;
+  }
+>;
