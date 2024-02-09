@@ -21,16 +21,16 @@ export const button = cva("", {
   },
 });
 
-export const buttonExtend = ({ variant, size, theme }: ButtonProps) => {
+export const buttonExtend = ({ variant, size, classNames }: ButtonProps) => {
   return cx(
     button({ variant, size }),
-    cva(theme?.base, {
+    cva(classNames?.base, {
       variants: {
         variant: {
-          ...theme?.variants,
+          ...classNames?.variants,
         },
         size: {
-          ...theme?.sizes,
+          ...classNames?.sizes,
         },
       },
     })({ variant, size })
