@@ -15,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={cn(
+        "butalert__button",
         buttonExtend({ variant, size, theme }),
         isFilled && "butalert__button--filled",
         className

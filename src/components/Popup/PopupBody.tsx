@@ -16,7 +16,13 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
   const { alignment, theme } = useContext(PopupContext);
 
   return (
-    <div className={cn(popupContent({ alignment }), theme?.panelBody)}>
+    <div
+      className={cn(
+        "butalert__content",
+        popupContent({ alignment }),
+        theme?.panelBody
+      )}
+    >
       {icon ? (
         <div className={cn("butalert__content__icon", theme?.icon)}>
           <motion.span

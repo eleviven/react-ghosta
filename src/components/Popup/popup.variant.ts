@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const popup = cva("butalert", {
+export const popup = cva("", {
   variants: {
     size: {
       sm: "butalert--sm",
@@ -18,7 +18,7 @@ export const popup = cva("butalert", {
     size: "md",
   },
 });
-export const popupContent = cva("butalert__content", {
+export const popupContent = cva("", {
   variants: {
     alignment: {
       left: "butalert__align--start",

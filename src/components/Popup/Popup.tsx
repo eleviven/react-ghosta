@@ -71,7 +71,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
           static
           open={isVisible}
           onClose={handleClose}
-          className={cn(popup({ size, alignment }))}
+          className={cn("butalert butalert--root", popup({ size, alignment }))}
           style={generateCssVariables(colors)}
         >
           {/* Backdrop */}

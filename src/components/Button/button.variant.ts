@@ -1,7 +1,7 @@
 import type { ButtonProps } from "./button.type";
 import { cva, cx } from "class-variance-authority";
 
-export const button = cva("butalert__button", {
+export const button = cva("", {
   variants: {
     variant: {
       default: "butalert__button--default",
