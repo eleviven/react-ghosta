@@ -52,10 +52,18 @@
   padding: 24px 36px;
 }
 
+.butalert__footer {
+  padding-top: 0;
+}
+
 .butalert__content {
   display: flex;
   flex-direction: column;
   text-align: inherit;
+}
+
+.butalert__nocontent {
+  height: 28px;
 }
 
 .butalert__content__icon {
@@ -68,7 +76,7 @@
   background-color: var(--ba-bg-icon);
   border-radius: 100%;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 26px;
 }
 .butalert__content__icon svg {
   width: 48px;
@@ -81,6 +89,7 @@
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 8px;
+  margin-top: 0;
 }
 
 .butalert__content__desc,

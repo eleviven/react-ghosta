@@ -15,6 +15,10 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
 }) => {
   const { alignment, theme } = useContext(PopupContext);
 
+  if (!title && !description && !icon) {
+    return <div className="butalert__nocontent" />;
+  }
+
   return (
     <div
       className={cn(
