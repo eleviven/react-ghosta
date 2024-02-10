@@ -62,30 +62,36 @@ const Butalert: React.FC<ButalertProps> = ({
 
   if (!popups.length) return null;
 
-  return popups.map((popup) => (
-    <Popup
-      key={popup.id}
-      isVisible
-      onClose={() => close(popup.id)}
-      {...popup}
-      colors={Object.assign({}, colors, popup.colors)}
-      classNames={Object.assign({}, classNames, popup.classNames)}
-      animationOptions={animationOptions}
-    >
-      <PopupHeader
-        title={popup.headerTitle}
-        description={popup.headerDescription}
-      />
+  const totalPopupsLength = popups.length;
 
-      <PopupBody
-        title={popup.title}
-        description={popup.description}
-        icon={popup.icon}
-      />
+  return popups.map((popup, index) => {
+    return (
+      <Popup
+        key={popup.id}
+        isVisible
+        onClose={() => close(popup.id!)}
+        {...popup}
+        colors={Object.assign({}, colors, popup.colors)}
+        classNames={Object.assign({}, classNames, popup.classNames)}
+        animationOptions={animationOptions}
+        preventClose={index < totalPopupsLength - 1}
+      >
+        <PopupHeader
+          title={popup.headerTitle}
+          description={popup.headerDescription}
+        />
 
-      <PopupFooter buttons={popup.buttons} />
-    </Popup>
-  ));
+        <PopupBody
+          title={popup.title}
+          description={popup.description}
+          icon={popup.icon}
+          content={popup.content}
+        />
+
+        <PopupFooter buttons={popup.buttons} />
+      </Popup>
+    );
+  });
 };
 
 export default Butalert;

@@ -28,6 +28,8 @@ const Popup: React.FC<ButalertPopupProps> = ({
   colors,
   classNames,
   animationOptions,
+  showBackdrop = true,
+  preventClose,
   onClose,
 }) => {
   const motionValue = useMotionValue(0);
@@ -42,6 +44,7 @@ const Popup: React.FC<ButalertPopupProps> = ({
   };
 
   const handleClose = () => {
+    if (preventClose) return;
     animate(motionValue, 0, {
       duration: 0.2,
       ...animationOptions?.close,
@@ -78,40 +81,44 @@ const Popup: React.FC<ButalertPopupProps> = ({
           style={generateCssVariables(colors)}
         >
           {/* Backdrop */}
-          <motion.div
-            className={cn("butalert__backdrop", classNames?.backdrop)}
-            style={{
-              opacity: motionOpacity,
-            }}
-            aria-hidden="true"
-          />
+          {showBackdrop && (
+            <motion.div
+              className={cn("butalert__backdrop", classNames?.backdrop)}
+              style={{
+                opacity: motionOpacity,
+              }}
+              aria-hidden="true"
+            />
+          )}
 
           {/* Panel */}
-          <Dialog.Panel
-            as={motion.div}
-            className={cn("butalert__panel", classNames?.panel)}
-            style={{
-              scale: motionScale,
-              opacity: motionOpacity,
-            }}
-          >
-            {/* Close Button */}
-            {showCloseButton ? (
-              <button
-                className={cn(
-                  "butalert__close-button",
-                  classNames?.closeButton
-                )}
-                aria-label="Close"
-                onClick={handleClose}
-              >
-                <XMarkIcon />
-              </button>
-            ) : null}
+          <div className="butalert__scroll-container">
+            <Dialog.Panel
+              as={motion.div}
+              className={cn("butalert__panel", classNames?.panel)}
+              style={{
+                scale: motionScale,
+                opacity: motionOpacity,
+              }}
+            >
+              {/* Close Button */}
+              {showCloseButton ? (
+                <button
+                  className={cn(
+                    "butalert__close-button",
+                    classNames?.closeButton
+                  )}
+                  aria-label="Close"
+                  onClick={handleClose}
+                >
+                  <XMarkIcon />
+                </button>
+              ) : null}
 
-            {/* Entire Content */}
-            {children}
-          </Dialog.Panel>
+              {/* Entire Content */}
+              {children}
+            </Dialog.Panel>
+          </div>
         </Dialog>
       </AnimatePresence>
     </PopupContext.Provider>

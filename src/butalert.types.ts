@@ -24,23 +24,25 @@ export type ButalertActions = {
 
 export type ButalertOptions = {
   id: number;
+} & Partial<{
+  title: string;
+  description: string;
 
-  title?: string;
-  description?: string;
+  icon: React.ReactNode;
 
-  headerTitle?: string;
-  headerDescription?: string;
+  headerTitle: string;
+  headerDescription: string;
 
-  icon?: React.ReactNode;
+  content: React.ReactNode;
 
-  buttons?: ButalertButtonOptions[] | null;
+  buttons: ButalertButtonOptions[] | null;
 
-  alignment?: ButalertPopupAlignment;
-  showCloseButton?: boolean;
-  size?: ButalertPopupProps["size"];
-  colors?: Partial<ButalertPopupElementColors>;
-  classNames?: Partial<ButalertPopupClassNames>;
-};
+  alignment: ButalertPopupAlignment;
+  showCloseButton: boolean;
+  size: ButalertPopupProps["size"];
+  colors: Partial<ButalertPopupElementColors>;
+  classNames: Partial<ButalertPopupClassNames>;
+}>;
 
 export type ButalertButtonOptions = {
   title?: string;
@@ -48,11 +50,12 @@ export type ButalertButtonOptions = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isFilled?: boolean;
-  onClick?: ({ butalert }: ButalertButtonActionParams) => void;
+  onClick?: (params: ButalertButtonActionParams) => void | Promise<void>;
 };
 
 export type ButalertButtonActionParams = {
-  butalert: ButalertActions;
+  popupId: number;
+  onClose: () => void;
 };
 
 export type ButalertAnimationOptions = Record<

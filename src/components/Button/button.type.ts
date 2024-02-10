@@ -12,4 +12,5 @@ export type ButtonProps = ComponentPropsWithoutRef<"button"> &
     children?: React.ReactNode;
     classNames?: ButalertPopupClassNames["button"];
     isFilled?: boolean;
+    isLoading?: boolean;
   };

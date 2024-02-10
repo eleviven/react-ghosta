@@ -13,6 +13,8 @@ export type ButalertPopupProps = VariantProps<typeof popup> & {
   classNames?: Partial<ButalertPopupClassNames> | null;
   colors?: Partial<ButalertPopupElementColors> | null;
   animationOptions?: Partial<ButalertAnimationOptions>;
+  showBackdrop?: boolean;
+  preventClose?: boolean;
   onClose: () => void;
 };
 
@@ -20,6 +22,7 @@ export type ButalertPopupBodyProps = {
   title?: React.ReactNode;
   description?: React.ReactNode;
   icon?: React.ReactNode;
+  content?: React.ReactNode;
 };
 
 export type ButalertPopupHeaderProps = {

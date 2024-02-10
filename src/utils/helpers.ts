@@ -8,7 +8,7 @@ export function generateCssVariables(
   return Object.entries(object || {}).reduce((acc, [key, value]) => {
     acc[`--ba-${convertStringToKebap(key)}`] = value;
     return acc;
-  }, {} as any);
+  }, {} as Record<string, string | number>);
 }
 
 export function convertStringToKebap(string: string) {
@@ -18,7 +18,13 @@ export function convertStringToKebap(string: string) {
     .toLowerCase();
 }
 
-export function cn(...args: any[]): string {
+export function cn(...args: unknown[]): string {
   const filtered = args?.filter((part) => typeof part === "string");
   return filtered?.join(" ") || "";
+}
+
+export function isAsync(func: (...args: never[]) => void) {
+  if (!func) return false;
+  const string = func.toString().trim();
+  return !!(string.match(/^async /) || string.match(/return _ref[^.]*\.apply/));
 }
