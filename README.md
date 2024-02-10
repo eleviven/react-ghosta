@@ -1,7 +1,7 @@
 <div align="center">
-    <img src="https://badgen.net/npm/v/@butalert/react" alt="NPM Version" />
-  <img src="https://badgen.net/bundlephobia/minzip/@butalert/react" alt="minzipped size"/>
-    <img src="https://github.com/timolins/@butalert/react/workflows/CI/badge.svg" alt="Build Status" />
+    <img src="https://badgen.net/npm/v/react-butalert" alt="NPM Version" />
+  <img src="https://badgen.net/bundlephobia/minzip/react-butalert" alt="minzipped size"/>
+    <img src="https://github.com/timolins/react-butalert/workflows/CI/badge.svg" alt="Build Status" />
 </a>
 </div>
 <br />
@@ -29,13 +29,13 @@
 #### With yarn
 
 ```sh
-yarn add @butalert/react
+yarn add react-butalert
 ```
 
 #### With NPM
 
 ```sh
-npm install @butalert/react
+npm install react-butalert
 ```
 
 ## Getting Started
@@ -43,9 +43,9 @@ npm install @butalert/react
 Add the Butalert to your app first. It will take care of rendering all alerts emitted. Now you can trigger `butalert.fire()` from anywhere!
 
 ```jsx
-import { Butalert } from "@butalert/react";
+import { Butalert } from 'react-butalert';
 
-const handleShowAlert = () => butalert.fire({ title: "Here is your alert." });
+const handleShowAlert = () => butalert.fire({ title: 'Here is your alert.' });
 
 const App = () => {
   return (
