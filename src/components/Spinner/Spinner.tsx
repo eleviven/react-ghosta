@@ -1,4 +1,4 @@
-import React, { type SVGProps } from "react";
+import React, { type SVGProps } from 'react';
 
 const Spinner: React.FC<SVGProps<SVGSVGElement>> = (props) => (
   <svg
@@ -11,7 +11,7 @@ const Spinner: React.FC<SVGProps<SVGSVGElement>> = (props) => (
   >
     <style>
       {
-        "@keyframes spinner_MGfb{93.75%,to{opacity:.2}}.spinner_S1WN{animation:spinner_MGfb .8s linear infinite;animation-delay:-.8s}"
+        '@keyframes spinner_MGfb{93.75%,to{opacity:.2}}.spinner_S1WN{animation:spinner_MGfb .8s linear infinite;animation-delay:-.8s}'
       }
     </style>
     <circle cx={4} cy={12} r={3} className="spinner_S1WN" />
@@ -21,7 +21,7 @@ const Spinner: React.FC<SVGProps<SVGSVGElement>> = (props) => (
       r={3}
       className="spinner_S1WN"
       style={{
-        animationDelay: "-.65s",
+        animationDelay: '-.65s',
       }}
     />
     <circle
@@ -30,7 +30,7 @@ const Spinner: React.FC<SVGProps<SVGSVGElement>> = (props) => (
       r={3}
       className="spinner_S1WN"
       style={{
-        animationDelay: "-.5s",
+        animationDelay: '-.5s',
       }}
     />
   </svg>

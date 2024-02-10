@@ -1,10 +1,10 @@
-import type { ButalertActions } from "./butalert.types";
+import type { ButalertActions } from './butalert.types';
 
 export const ButalertManager = {
   butalert: null as ButalertActions | null,
 
   register(butalert: ButalertActions) {
-    if (!this.butalert && "id" in butalert) {
+    if (!this.butalert && 'id' in butalert) {
       this.butalert = butalert;
     }
   },

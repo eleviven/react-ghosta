@@ -1,32 +1,32 @@
-import { cva } from "class-variance-authority";
+import { cva } from 'class-variance-authority';
 
-export const popup = cva("", {
+export const popup = cva('', {
   variants: {
     size: {
-      sm: "butalert--sm",
-      md: "butalert--md",
-      lg: "butalert--lg",
+      sm: 'butalert--sm',
+      md: 'butalert--md',
+      lg: 'butalert--lg',
     },
     alignment: {
-      left: "butalert__text--left",
-      center: "butalert__text--center",
-      right: "butalert__text--right",
+      left: 'butalert__text--left',
+      center: 'butalert__text--center',
+      right: 'butalert__text--right',
     },
   },
   defaultVariants: {
-    alignment: "center",
-    size: "md",
+    alignment: 'center',
+    size: 'md',
   },
 });
-export const popupContent = cva("", {
+export const popupContent = cva('', {
   variants: {
     alignment: {
-      left: "butalert__align--start",
-      center: "butalert__align--center",
-      right: "butalert__align--end",
+      left: 'butalert__align--start',
+      center: 'butalert__align--center',
+      right: 'butalert__align--end',
     },
   },
   defaultVariants: {
-    alignment: "center",
+    alignment: 'center',
   },
 });

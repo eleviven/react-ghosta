@@ -1,13 +1,13 @@
 import type {
   ButtonSize,
   ButtonVariant,
-} from "./components/Button/button.type";
+} from './components/Button/button.type';
 import type {
   ButalertPopupClassNames,
   ButalertPopupElementColors,
   ButalertPopupProps,
   ButalertPopupAlignment,
-} from "./components/Popup/popup.type";
+} from './components/Popup/popup.type';
 
 export type ButalertProps = {
   classNames?: Partial<ButalertPopupClassNames>;
@@ -39,7 +39,7 @@ export type ButalertOptions = {
 
   alignment: ButalertPopupAlignment;
   showCloseButton: boolean;
-  size: ButalertPopupProps["size"];
+  size: ButalertPopupProps['size'];
   colors: Partial<ButalertPopupElementColors>;
   classNames: Partial<ButalertPopupClassNames>;
 }>;
@@ -59,11 +59,11 @@ export type ButalertButtonActionParams = {
 };
 
 export type ButalertAnimationOptions = Record<
-  "open" | "close",
+  'open' | 'close',
   {
     delay?: number;
     elapsed?: number;
-    type?: "decay" | "spring" | "keyframes" | "tween" | "inertia";
+    type?: 'decay' | 'spring' | 'keyframes' | 'tween' | 'inertia';
     duration?: number;
   }
 >;

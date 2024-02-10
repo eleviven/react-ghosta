@@ -1,1 +1,1 @@
-export { default as XMarkIcon } from "./XMarkIcon";
+export { default as XMarkIcon } from './XMarkIcon';

@@ -1,4 +1,4 @@
-import React, { type SVGProps } from "react";
+import React, { type SVGProps } from 'react';
 
 const XMarkIcon: React.FC<SVGProps<SVGSVGElement>> = ({ ...props }) => {
   return (

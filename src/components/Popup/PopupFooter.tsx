@@ -1,15 +1,15 @@
-import type { ButalertPopupFooterProps } from "./popup.type";
+import type { ButalertPopupFooterProps } from './popup.type';
 import type {
   ButalertButtonActionParams,
   ButalertButtonOptions,
-} from "../../butalert.types";
+} from '../../butalert.types';
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
 
-import { PopupContext } from "./Popup";
-import Button from "../Button/Button";
+import { PopupContext } from './Popup';
+import Button from '../Button/Button';
 
-import { cn, isAsync } from "../../utils/helpers";
+import { cn, isAsync } from '../../utils/helpers';
 
 const PopupFooter: React.FC<ButalertPopupFooterProps> = ({ buttons }) => {
   const { onClose, classNames, id: popupId } = useContext(PopupContext);
@@ -42,7 +42,7 @@ const PopupFooter: React.FC<ButalertPopupFooterProps> = ({ buttons }) => {
   if (!buttons?.length) return null;
 
   return (
-    <div className={cn("butalert__footer", classNames?.panelFooter)}>
+    <div className={cn('butalert__footer', classNames?.panelFooter)}>
       {buttons?.map((button, index) => (
         <Button
           key={index}

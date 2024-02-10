@@ -2,17 +2,17 @@ import type {
   ButalertActions,
   ButalertOptions,
   ButalertProps,
-} from "./butalert.types";
+} from './butalert.types';
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-import { ButalertManager } from "./ButalertManager";
-import { generateRandomInt } from "./utils/helpers";
+import { ButalertManager } from './ButalertManager';
+import { generateRandomInt } from './utils/helpers';
 
-import Popup from "./components/Popup/Popup";
-import PopupHeader from "./components/Popup/PopupHeader";
-import PopupBody from "./components/Popup/PopupBody";
-import PopupFooter from "./components/Popup/PopupFooter";
+import Popup from './components/Popup/Popup';
+import PopupHeader from './components/Popup/PopupHeader';
+import PopupBody from './components/Popup/PopupBody';
+import PopupFooter from './components/Popup/PopupFooter';
 
 const Butalert: React.FC<ButalertProps> = ({
   classNames,

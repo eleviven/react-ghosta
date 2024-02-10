@@ -1,9 +1,9 @@
-import type { VariantProps } from "class-variance-authority";
+import type { VariantProps } from 'class-variance-authority';
 import type {
   ButalertAnimationOptions,
   ButalertButtonOptions,
-} from "../../butalert.types";
-import { popup } from "./popup.variant";
+} from '../../butalert.types';
+import { popup } from './popup.variant';
 
 export type ButalertPopupProps = VariantProps<typeof popup> & {
   id: number;
@@ -34,7 +34,7 @@ export type ButalertPopupFooterProps = {
   buttons?: ButalertButtonOptions[] | null;
 };
 
-export type ButalertPopupAlignment = "left" | "center" | "right";
+export type ButalertPopupAlignment = 'left' | 'center' | 'right';
 
 export type ButalertPopupElementColors = {
   textIcon: string;

@@ -1,0 +1,2 @@
+npx prettier src --write
+npm run size
