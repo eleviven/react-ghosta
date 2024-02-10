@@ -20,11 +20,15 @@
   position: fixed;
   z-index: 999;
   inset: 0;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.butalert__scroll-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 16px;
-  padding-right: 16px;
+  min-height: 100%;
 }
 
 .butalert__panel {
@@ -53,7 +57,7 @@
 }
 
 .butalert__footer {
-  padding-top: 0;
+  padding-top: 12px;
 }
 
 .butalert__content {
@@ -99,6 +103,11 @@
   font-weight: 400;
 }
 
+.butalert__content__desc + .butalert__content__content,
+.butalert__content__title + .butalert__content__content {
+  margin-top: 16px;
+}
+
 .butalert__header {
   padding-bottom: 0;
 }
@@ -121,11 +130,11 @@
 
 /********** Icon Button **********/
 .butalert__close-button {
-  position: absolute;
-  top: 16px;
-  right: 16px;
   width: 30px;
   height: 30px;
+  padding: 0;
+  margin: 12px 12px -16px auto;
+
   color: var(--ba-text-close-button);
   background: transparent;
   border: none;
@@ -133,7 +142,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  padding: 0;
   cursor: pointer;
 }
 
@@ -143,9 +151,30 @@
 
 /********** Button **********/
 .butalert__button {
+  position: relative;
   border: 1px solid transparent;
   cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
+}
+
+.butalert__button__spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.butalert__button__spinner > svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Button Variants */

@@ -1,7 +1,11 @@
 import type { ButtonProps } from "./button.type";
+
 import React from "react";
-import { buttonExtend } from "./button.variant";
+
+import Spinner from "../Spinner/Spinner";
+
 import { cn } from "../../utils/helpers";
+import { buttonExtend } from "./button.variant";
 
 const Button: React.FC<ButtonProps> = ({
   variant,
@@ -10,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   classNames,
   isFilled,
+  isLoading,
   ...props
 }) => {
   return (
@@ -23,6 +28,11 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {children}
+      {isLoading ? (
+        <span className="butalert__button__spinner">
+          <Spinner />
+        </span>
+      ) : null}
     </button>
   );
 };
