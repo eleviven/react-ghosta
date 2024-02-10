@@ -17,15 +17,11 @@ export default {
       file: `${name}.js`,
       format: 'cjs',
       exports: 'auto',
-      preserveModules: false,
-      sourcemap: true,
     },
     {
       file: `${name}.es.js`,
       format: 'es',
       exports: 'auto',
-      preserveModules: false,
-      sourcemap: true,
     },
   ],
   plugins: [
