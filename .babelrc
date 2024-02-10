@@ -1,3 +1,4 @@
 {
-  "presets": ["@babel/env", "@babel/react"]
+  "presets": ["@babel/env", "@babel/preset-react"],
+  "exclude": "node_modules/**"
 }

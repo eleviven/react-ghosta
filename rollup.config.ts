@@ -24,9 +24,7 @@ export default {
     external(),
     typescript({ clean: true }),
     babel({
-      exclude: "node_modules/**",
-      presets: ["@babel/preset-react"],
-      babelrc: true,
+      configFile: "./.babelrc",
       babelHelpers: "bundled",
     }),
     resolve(),
