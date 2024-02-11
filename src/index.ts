@@ -1,3 +1,3 @@
-export { default as Butalert } from './Butalert';
-export * as butalert from './actions';
-import './assets/butalert.css';
+export { default as Ghosta } from "./Ghosta";
+export * as ghosta from "./actions";
+import "./assets/ghosta.css";

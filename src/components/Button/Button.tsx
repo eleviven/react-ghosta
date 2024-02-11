@@ -1,11 +1,11 @@
-import type { ButtonProps } from './button.type';
+import type { ButtonProps } from "./button.type";
 
-import React from 'react';
+import React from "react";
 
-import Spinner from '../Spinner/Spinner';
+import Spinner from "../Spinner/Spinner";
 
-import { cn } from '../../utils/helpers';
-import { buttonExtend } from './button.variant';
+import { cn } from "../../utils/helpers";
+import { buttonExtend } from "./button.variant";
 
 const Button: React.FC<ButtonProps> = ({
   variant,
@@ -20,16 +20,16 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        'butalert__button',
+        "ghosta__button",
         buttonExtend({ variant, size, classNames }),
-        isFilled && 'butalert__button--filled',
+        isFilled && "ghosta__button--filled",
         className
       )}
       {...props}
     >
       {children}
       {isLoading ? (
-        <span className="butalert__button__spinner">
+        <span className="ghosta__button__spinner">
           <Spinner />
         </span>
       ) : null}

@@ -1,29 +1,25 @@
-import type {
-  ButalertActions,
-  ButalertOptions,
-  ButalertProps,
-} from './butalert.types';
+import type { GhostaActions, GhostaOptions, GhostaProps } from "./types";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
-import { ButalertManager } from './ButalertManager';
-import { generateRandomInt } from './utils/helpers';
+import { GhostaManager } from "./GhostaManager";
+import { generateRandomInt } from "./utils/helpers";
 
-import Popup from './components/Popup/Popup';
-import PopupHeader from './components/Popup/PopupHeader';
-import PopupBody from './components/Popup/PopupBody';
-import PopupFooter from './components/Popup/PopupFooter';
+import Popup from "./components/Popup/Popup";
+import PopupHeader from "./components/Popup/PopupHeader";
+import PopupBody from "./components/Popup/PopupBody";
+import PopupFooter from "./components/Popup/PopupFooter";
 
-const Butalert: React.FC<ButalertProps> = ({
+const Ghosta: React.FC<GhostaProps> = ({
   classNames,
   colors,
   animationOptions,
 }) => {
   // State
-  const [popups, setPopups] = useState<ButalertOptions[]>([]);
+  const [popups, setPopups] = useState<GhostaOptions[]>([]);
 
   // Actions
-  const fire = (options: ButalertOptions) => {
+  const fire = (options: GhostaOptions) => {
     setPopups((prev) =>
       prev.concat({
         ...options,
@@ -42,7 +38,7 @@ const Butalert: React.FC<ButalertProps> = ({
 
   // Hooks
   // Butalert Ref
-  const butalert = useRef<ButalertActions>({
+  const butalert = useRef<GhostaActions>({
     id: generateRandomInt(),
     fire,
     close,
@@ -54,9 +50,9 @@ const Butalert: React.FC<ButalertProps> = ({
     if (!butalert.current) return;
     const butalertId = butalert.current.id;
 
-    ButalertManager.register(butalert.current);
+    GhostaManager.register(butalert.current);
     return () => {
-      ButalertManager.unregister(butalertId);
+      GhostaManager.unregister(butalertId);
     };
   }, []);
 
@@ -94,4 +90,4 @@ const Butalert: React.FC<ButalertProps> = ({
   });
 };
 
-export default Butalert;
+export default Ghosta;

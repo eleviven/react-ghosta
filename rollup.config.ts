@@ -33,7 +33,7 @@ export default {
     }),
     nodeResolve(),
     commonjs(),
-    css({ output: 'butalert.css', minify: true }),
+    css({ output: 'ghosta.css', minify: true }),
     terser(),
   ],
 };

@@ -1,23 +1,23 @@
-import type { ButtonProps } from './button.type';
-import { cva, cx } from 'class-variance-authority';
+import type { ButtonProps } from "./button.type";
+import { cva, cx } from "class-variance-authority";
 
-export const button = cva('', {
+export const button = cva("", {
   variants: {
     variant: {
-      default: 'butalert__button--default',
-      primary: 'butalert__button--primary',
-      success: 'butalert__button--success',
-      danger: 'butalert__button--danger',
+      default: "ghosta__button--default",
+      primary: "ghosta__button--primary",
+      success: "ghosta__button--success",
+      danger: "ghosta__button--danger",
     },
     size: {
-      sm: 'butalert__button--sm',
-      md: 'butalert__button--md',
-      lg: 'butalert__button--lg',
+      sm: "ghosta__button--sm",
+      md: "ghosta__button--md",
+      lg: "ghosta__button--lg",
     },
   },
   defaultVariants: {
-    variant: 'default',
-    size: 'lg',
+    variant: "default",
+    size: "lg",
   },
 });
 

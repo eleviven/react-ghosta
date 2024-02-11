@@ -1,4 +1,4 @@
-.butalert--root {
+.ghosta--root {
   --ba-bg-panel: #fff;
 
   --ba-text-close-button: #666;
@@ -12,11 +12,11 @@
   --ba-text-title: #000;
   --ba-text-description: #888;
 
-  --ba-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ba-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.butalert {
+.ghosta {
   position: fixed;
   z-index: 999;
   inset: 0;
@@ -24,14 +24,14 @@
   overflow-y: auto;
 }
 
-.butalert__scroll-container {
+.ghosta__scroll-container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100%;
 }
 
-.butalert__panel {
+.ghosta__panel {
   position: relative;
   z-index: 1;
   background-color: var(--ba-bg-panel);
@@ -40,37 +40,37 @@
   font-family: var(--ba-font-family);
 }
 
-.butalert--sm .butalert__panel {
+.ghosta--sm .ghosta__panel {
   max-width: 400px;
 }
-.butalert--md .butalert__panel {
+.ghosta--md .ghosta__panel {
   max-width: 500px;
 }
-.butalert--lg .butalert__panel {
+.ghosta--lg .ghosta__panel {
   max-width: 600px;
 }
 
-.butalert__content,
-.butalert__header,
-.butalert__footer {
+.ghosta__content,
+.ghosta__header,
+.ghosta__footer {
   padding: 24px 36px;
 }
 
-.butalert__footer {
+.ghosta__footer {
   padding-top: 12px;
 }
 
-.butalert__content {
+.ghosta__content {
   display: flex;
   flex-direction: column;
   text-align: inherit;
 }
 
-.butalert__nocontent {
+.ghosta__nocontent {
   height: 28px;
 }
 
-.butalert__content__icon {
+.ghosta__content__icon {
   width: 100px;
   height: 100px;
   display: flex;
@@ -82,13 +82,13 @@
   margin-top: 16px;
   margin-bottom: 26px;
 }
-.butalert__content__icon svg {
+.ghosta__content__icon svg {
   width: 48px;
   height: 48px;
 }
 
-.butalert__content__title,
-.butalert__header__title {
+.ghosta__content__title,
+.ghosta__header__title {
   color: var(--ba-text-title);
   font-size: 24px;
   font-weight: 700;
@@ -96,23 +96,23 @@
   margin-top: 0;
 }
 
-.butalert__content__desc,
-.butalert__header__desc {
+.ghosta__content__desc,
+.ghosta__header__desc {
   color: var(--ba-text-description);
   font-size: 16;
   font-weight: 400;
 }
 
-.butalert__content__desc + .butalert__content__content,
-.butalert__content__title + .butalert__content__content {
+.ghosta__content__desc + .ghosta__content__content,
+.ghosta__content__title + .ghosta__content__content {
   margin-top: 16px;
 }
 
-.butalert__header {
+.ghosta__header {
   padding-bottom: 0;
 }
 
-.butalert__footer {
+.ghosta__footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -121,7 +121,7 @@
   gap: 12px;
 }
 
-.butalert__backdrop {
+.ghosta__backdrop {
   position: fixed;
   z-index: -1;
   inset: 0;
@@ -129,7 +129,7 @@
 }
 
 /********** Icon Button **********/
-.butalert__close-button {
+.ghosta__close-button {
   width: 30px;
   height: 30px;
   padding: 0;
@@ -145,12 +145,12 @@
   cursor: pointer;
 }
 
-.butalert__close-button:hover {
+.ghosta__close-button:hover {
   background-color: var(--ba-bg-close-button\:hover);
 }
 
 /********** Button **********/
-.butalert__button {
+.ghosta__button {
   position: relative;
   border: 1px solid transparent;
   cursor: pointer;
@@ -159,7 +159,7 @@
   transition: 0.1s ease-in-out;
 }
 
-.butalert__button__spinner {
+.ghosta__button__spinner {
   position: absolute;
   top: 0;
   left: 0;
@@ -172,62 +172,62 @@
   justify-content: center;
 }
 
-.butalert__button__spinner > svg {
+.ghosta__button__spinner > svg {
   width: 20px;
   height: 20px;
 }
 
 /* Button Variants */
-.butalert__button--default {
+.ghosta__button--default {
   color: #000;
   background-color: #fff;
   border-color: rgba(0, 0, 0, 0.15);
 }
-.butalert__button--default:hover {
+.ghosta__button--default:hover {
   background-color: #eee;
 }
 
-.butalert__button--primary {
+.ghosta__button--primary {
   color: #fff;
   background-color: #3b82f6;
 }
-.butalert__button--primary:hover {
+.ghosta__button--primary:hover {
   color: #fff;
   background-color: #2563eb;
 }
 
-.butalert__button--success {
+.ghosta__button--success {
   color: #fff;
   background-color: #22c55e;
 }
-.butalert__button--success:hover {
+.ghosta__button--success:hover {
   color: #fff;
   background-color: #16a34a;
 }
 
-.butalert__button--danger {
+.ghosta__button--danger {
   color: #fff;
   background-color: #ef4444;
 }
-.butalert__button--danger:hover {
+.ghosta__button--danger:hover {
   color: #fff;
   background-color: #dc2626;
 }
 
 /* Button Size */
-.butalert__button--sm {
+.ghosta__button--sm {
   border-radius: 6px;
   padding: 0px 12px;
   height: 34px;
   font-size: 14px;
 }
-.butalert__button--md {
+.ghosta__button--md {
   border-radius: 8px;
   padding: 0px 16px;
   height: 40px;
   font-size: 16px;
 }
-.butalert__button--lg {
+.ghosta__button--lg {
   border-radius: 10px;
   padding: 0px 24px;
   height: 46px;
@@ -235,27 +235,27 @@
 }
 
 /* Button Extra Modifiers */
-.butalert__button--filled {
+.ghosta__button--filled {
   flex: 1;
 }
 
 /********** Utils **********/
-.butalert__text--left {
+.ghosta__text--left {
   text-align: left;
 }
-.butalert__text--right {
+.ghosta__text--right {
   text-align: right;
 }
-.butalert__text--center {
+.ghosta__text--center {
   text-align: center;
 }
 
-.butalert__align-start {
+.ghosta__align-start {
   align-items: flex-start;
 }
-.butalert__align--end {
+.ghosta__align--end {
   align-items: flex-end;
 }
-.butalert__align--center {
+.ghosta__align--center {
   align-items: center;
 }

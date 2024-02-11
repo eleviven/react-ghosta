@@ -1,14 +1,14 @@
-import type { ButalertPopupBodyProps } from './popup.type';
+import type { GhostaPopupBodyProps } from "./popup.type";
 
-import React, { useContext } from 'react';
-import { Dialog } from '@headlessui/react';
-import { motion } from 'framer-motion';
+import React, { useContext } from "react";
+import { Dialog } from "@headlessui/react";
+import { motion } from "framer-motion";
 
-import { PopupContext } from './Popup';
-import { popupContent } from './popup.variant';
-import { cn } from '../../utils/helpers';
+import { PopupContext } from "./Popup";
+import { popupContent } from "./popup.variant";
+import { cn } from "../../utils/helpers";
 
-const PopupBody: React.FC<ButalertPopupBodyProps> = ({
+const PopupBody: React.FC<GhostaPopupBodyProps> = ({
   title,
   description,
   icon,
@@ -17,19 +17,19 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
   const { alignment, classNames } = useContext(PopupContext);
 
   if (!title && !description && !icon && !content) {
-    return <div className="butalert__nocontent" />;
+    return <div className="ghosta__nocontent" />;
   }
 
   return (
     <div
       className={cn(
-        'butalert__content',
+        "ghosta__content",
         popupContent({ alignment }),
         classNames?.panelBody
       )}
     >
       {icon ? (
-        <div className={cn('butalert__content__icon', classNames?.icon)}>
+        <div className={cn("ghosta__content__icon", classNames?.icon)}>
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -41,18 +41,18 @@ const PopupBody: React.FC<ButalertPopupBodyProps> = ({
       ) : null}
       {title ? (
         <Dialog.Title
-          className={cn('butalert__content__title', classNames?.title)}
+          className={cn("ghosta__content__title", classNames?.title)}
         >
           {title}
         </Dialog.Title>
       ) : null}
       {description ? (
-        <div className={cn('butalert__content__desc', classNames?.description)}>
+        <div className={cn("ghosta__content__desc", classNames?.description)}>
           {description}
         </div>
       ) : null}
       {content ? (
-        <div className="butalert__content__content">{content}</div>
+        <div className="ghosta__content__content">{content}</div>
       ) : null}
     </div>
   );

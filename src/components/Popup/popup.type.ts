@@ -1,42 +1,39 @@
-import type { VariantProps } from 'class-variance-authority';
-import type {
-  ButalertAnimationOptions,
-  ButalertButtonOptions,
-} from '../../butalert.types';
-import { popup } from './popup.variant';
+import type { VariantProps } from "class-variance-authority";
+import type { GhostaAnimationOptions, GhostaButtonOptions } from "../../types";
+import { popup } from "./popup.variant";
 
-export type ButalertPopupProps = VariantProps<typeof popup> & {
+export type GhostaPopupProps = VariantProps<typeof popup> & {
   id: number;
   children: React.ReactNode;
   isVisible: boolean;
   showCloseButton?: boolean;
-  classNames?: Partial<ButalertPopupClassNames> | null;
-  colors?: Partial<ButalertPopupElementColors> | null;
-  animationOptions?: Partial<ButalertAnimationOptions>;
+  classNames?: Partial<GhostaPopupClassNames> | null;
+  colors?: Partial<GhostaPopupElementColors> | null;
+  animationOptions?: Partial<GhostaAnimationOptions>;
   showBackdrop?: boolean;
   preventClose?: boolean;
   onClose: () => void;
 };
 
-export type ButalertPopupBodyProps = {
+export type GhostaPopupBodyProps = {
   title?: React.ReactNode;
   description?: React.ReactNode;
   icon?: React.ReactNode;
   content?: React.ReactNode;
 };
 
-export type ButalertPopupHeaderProps = {
+export type GhostaPopupHeaderProps = {
   title?: string;
   description?: string;
 };
 
-export type ButalertPopupFooterProps = {
-  buttons?: ButalertButtonOptions[] | null;
+export type GhostaPopupFooterProps = {
+  buttons?: GhostaButtonOptions[] | null;
 };
 
-export type ButalertPopupAlignment = 'left' | 'center' | 'right';
+export type GhostaPopupAlignment = "left" | "center" | "right";
 
-export type ButalertPopupElementColors = {
+export type GhostaPopupElementColors = {
   textIcon: string;
   bgIcon: string;
   textTitle: string;
@@ -47,7 +44,7 @@ export type ButalertPopupElementColors = {
   bgCloseButton: string;
 };
 
-export type ButalertPopupClassNames = {
+export type GhostaPopupClassNames = {
   panel: string;
   panelHeader: string;
   panelBody: string;
