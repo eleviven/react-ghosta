@@ -1,11 +1,16 @@
-<div align="center">
-    <img src="https://badgen.net/npm/v/react-butalert" alt="NPM Version" />
-  <img src="https://badgen.net/bundlephobia/minzip/react-butalert" alt="minzipped size"/>
-    <img src="https://github.com/timolins/react-butalert/workflows/CI/badge.svg" alt="Build Status" />
+<a href="https://react-butalert.vercel.app">
+<img alt="react-butalert - Try it out" src="https://github.com/eleviven/react-butalert-website/raw/main/public/butalert-banner.svg"/>
 </a>
-</div>
+
 <br />
-<div align="center"><strong>Hot Alerts for React.</strong></div>
+
+<div align="center">
+  <img src="https://badgen.net/npm/v/react-butalert" alt="NPM Version" />
+  <img src="https://badgen.net/bundlephobia/minzip/react-butalert" alt="minzipped size"/>
+</div>
+
+<br />
+<div align="center"><strong>Popup Alerts for React.</strong></div>
 <div align="center">Lightweight, customizable and beautiful by default.</div>
 <br />
 
