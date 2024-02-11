@@ -1,6 +1,6 @@
 <p>
   <a href="https://react-ghosta.vercel.app" style="display:block;">
-    <img alt="react-ghosta - Try it out" src="https://github.com/eleviven/react-ghosta-website/raw/main/static/ghosta-banner.svg"/>
+    <img alt="react-ghosta - Try it out" src="https://github.com/eleviven/react-ghosta-website/raw/main/static/img/ghosta-banner.svg"/>
   </a>
 </p>
 
