@@ -15,9 +15,9 @@
 <br />
 
 <div align="center">
-<a href="https://butalert.vercel.app/docs">Documentation</a> 
+<a href="https://react-butalert.vercel.app/docs">Documentation</a> 
 <span> · </span>
-<a href="https://butalert.vercel.app">Website</a> 
+<a href="https://react-butalert.vercel.app">Website</a> 
 </div>
 
 <br />
@@ -64,4 +64,4 @@ const App = () => {
 
 ## Documentation
 
-Find the full API reference on [official documentation](https://butalert.vercel.app/docs).
+Find the full API reference on [official documentation](https://react-butalert.vercel.app/docs).
