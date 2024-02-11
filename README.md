@@ -1,8 +1,8 @@
-<a href="https://react-butalert.vercel.app">
-<img alt="react-butalert - Try it out" src="https://github.com/eleviven/react-butalert-website/raw/main/public/butalert-banner.svg"/>
-</a>
-
-<br />
+<p>
+  <a href="https://react-butalert.vercel.app" style="display:block;">
+    <img alt="react-butalert - Try it out" src="https://github.com/eleviven/react-butalert-website/raw/main/public/butalert-banner.svg"/>
+  </a>
+</p>
 
 <div align="center">
   <img src="https://badgen.net/npm/v/react-butalert" alt="NPM Version" />
