@@ -1,14 +1,14 @@
-import type { GhostaActions, GhostaOptions, GhostaProps } from "./types";
+import type { GhostaActions, GhostaOptions, GhostaProps } from './types';
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-import { GhostaManager } from "./GhostaManager";
-import { generateRandomInt } from "./utils/helpers";
+import { GhostaManager } from './GhostaManager';
+import { generateRandomInt } from './utils/helpers';
 
-import Popup from "./components/Popup/Popup";
-import PopupHeader from "./components/Popup/PopupHeader";
-import PopupBody from "./components/Popup/PopupBody";
-import PopupFooter from "./components/Popup/PopupFooter";
+import Popup from './components/Popup/Popup';
+import PopupHeader from './components/Popup/PopupHeader';
+import PopupBody from './components/Popup/PopupBody';
+import PopupFooter from './components/Popup/PopupFooter';
 
 const Ghosta: React.FC<GhostaProps> = ({
   classNames,

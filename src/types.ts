@@ -1,13 +1,13 @@
 import type {
   ButtonSize,
   ButtonVariant,
-} from "./components/Button/button.type";
+} from './components/Button/button.type';
 import type {
   GhostaPopupClassNames,
   GhostaPopupElementColors,
   GhostaPopupProps,
   GhostaPopupAlignment,
-} from "./components/Popup/popup.type";
+} from './components/Popup/popup.type';
 
 export type GhostaProps = {
   classNames?: Partial<GhostaPopupClassNames>;
@@ -39,7 +39,7 @@ export type GhostaOptions = {
 
   alignment: GhostaPopupAlignment;
   showCloseButton: boolean;
-  size: GhostaPopupProps["size"];
+  size: GhostaPopupProps['size'];
   colors: Partial<GhostaPopupElementColors>;
   classNames: Partial<GhostaPopupClassNames>;
 }>;
@@ -59,11 +59,11 @@ export type GhostaButtonActionParams = {
 };
 
 export type GhostaAnimationOptions = Record<
-  "open" | "close",
+  'open' | 'close',
   {
     delay?: number;
     elapsed?: number;
-    type?: "decay" | "spring" | "keyframes" | "tween" | "inertia";
+    type?: 'decay' | 'spring' | 'keyframes' | 'tween' | 'inertia';
     duration?: number;
   }
 >;

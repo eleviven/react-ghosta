@@ -1,18 +1,18 @@
-import type { GhostaPopupProps } from "./popup.type";
+import type { GhostaPopupProps } from './popup.type';
 
-import React, { createContext, useEffect } from "react";
-import { Dialog } from "@headlessui/react";
+import React, { createContext, useEffect } from 'react';
+import { Dialog } from '@headlessui/react';
 import {
   AnimatePresence,
   animate,
   motion,
   useMotionValue,
   useTransform,
-} from "framer-motion";
+} from 'framer-motion';
 
-import { XMarkIcon } from "../icons";
-import { popup } from "./popup.variant";
-import { cn, generateCssVariables } from "../../utils/helpers";
+import { XMarkIcon } from '../icons';
+import { popup } from './popup.variant';
+import { cn, generateCssVariables } from '../../utils/helpers';
 
 export const PopupContext = createContext<GhostaPopupProps>(
   {} as GhostaPopupProps
@@ -77,13 +77,13 @@ const Popup: React.FC<GhostaPopupProps> = ({
           static
           open={isVisible}
           onClose={handleClose}
-          className={cn("ghosta ghosta--root", popup({ size, alignment }))}
+          className={cn('ghosta ghosta--root', popup({ size, alignment }))}
           style={generateCssVariables(colors)}
         >
           {/* Backdrop */}
           {showBackdrop && (
             <motion.div
-              className={cn("ghosta__backdrop", classNames?.backdrop)}
+              className={cn('ghosta__backdrop', classNames?.backdrop)}
               style={{
                 opacity: motionOpacity,
               }}
@@ -95,7 +95,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
           <div className="ghosta__scroll-container">
             <Dialog.Panel
               as={motion.div}
-              className={cn("ghosta__panel", classNames?.panel)}
+              className={cn('ghosta__panel', classNames?.panel)}
               style={{
                 scale: motionScale,
                 opacity: motionOpacity,
@@ -105,7 +105,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
               {showCloseButton ? (
                 <button
                   className={cn(
-                    "ghosta__close-button",
+                    'ghosta__close-button',
                     classNames?.closeButton
                   )}
                   aria-label="Close"

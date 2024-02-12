@@ -1,5 +1,5 @@
-import { GhostaManager } from "../GhostaManager";
-import { GHOSTA_MESSAGES } from "../utils/messages";
+import { GhostaManager } from '../GhostaManager';
+import { GHOSTA_MESSAGES } from '../utils/messages';
 
 export default () => {
   const ghosta = GhostaManager.get();

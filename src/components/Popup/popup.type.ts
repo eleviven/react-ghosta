@@ -1,6 +1,6 @@
-import type { VariantProps } from "class-variance-authority";
-import type { GhostaAnimationOptions, GhostaButtonOptions } from "../../types";
-import { popup } from "./popup.variant";
+import type { VariantProps } from 'class-variance-authority';
+import type { GhostaAnimationOptions, GhostaButtonOptions } from '../../types';
+import { popup } from './popup.variant';
 
 export type GhostaPopupProps = VariantProps<typeof popup> & {
   id: number;
@@ -31,7 +31,7 @@ export type GhostaPopupFooterProps = {
   buttons?: GhostaButtonOptions[] | null;
 };
 
-export type GhostaPopupAlignment = "left" | "center" | "right";
+export type GhostaPopupAlignment = 'left' | 'center' | 'right';
 
 export type GhostaPopupElementColors = {
   textIcon: string;

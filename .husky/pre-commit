@@ -1,2 +1,2 @@
-npx prettier src --write
+npm run prettier
 npm run size

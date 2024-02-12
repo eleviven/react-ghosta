@@ -1,15 +1,15 @@
-import type { GhostaPopupFooterProps } from "./popup.type";
+import type { GhostaPopupFooterProps } from './popup.type';
 import type {
   GhostaButtonActionParams,
   GhostaButtonOptions,
-} from "../../types";
+} from '../../types';
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
 
-import { PopupContext } from "./Popup";
-import Button from "../Button/Button";
+import { PopupContext } from './Popup';
+import Button from '../Button/Button';
 
-import { cn, isAsync } from "../../utils/helpers";
+import { cn, isAsync } from '../../utils/helpers';
 
 const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
   const { onClose, classNames, id: popupId } = useContext(PopupContext);
@@ -42,7 +42,7 @@ const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
   if (!buttons?.length) return null;
 
   return (
-    <div className={cn("ghosta__footer", classNames?.panelFooter)}>
+    <div className={cn('ghosta__footer', classNames?.panelFooter)}>
       {buttons?.map((button, index) => (
         <Button
           key={index}

@@ -1,10 +1,10 @@
-import type { GhostaActions } from "./types";
+import type { GhostaActions } from './types';
 
 export const GhostaManager = {
   ghosta: null as GhostaActions | null,
 
   register(ghosta: GhostaActions) {
-    if (!this.ghosta && "id" in ghosta) {
+    if (!this.ghosta && 'id' in ghosta) {
       this.ghosta = ghosta;
     }
   },
