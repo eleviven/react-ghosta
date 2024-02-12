@@ -1,12 +1,14 @@
 {
   "name": "react-ghosta",
   "version": "1.0.2",
+  "type":"module",
   "description": "React popup alerts. Lightweight, customizable and beautiful by default.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "size": "size-limit"
+    "build": "rm -rf dist && rollup -c",
+    "size": "size-limit",
+    "prettier": "prettier src --write"
   },
   "keywords": [
     "react",
@@ -54,10 +56,10 @@
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^2.79.1",
+    "rollup": "^4.10.0",
     "rollup-plugin-import-css": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-ts": "^3.4.5",
     "size-limit": "^11.0.2",
     "typescript": "^5.3.3"
   }
