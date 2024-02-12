@@ -1,7 +1,7 @@
 {
   "name": "react-ghosta",
   "version": "1.0.3",
-  "type":"module",
+  "type": "module",
   "description": "React popup alerts. Lightweight, customizable and beautiful by default.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,9 +32,8 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
-    "class-variance-authority": "^0.7.0",
-    "framer-motion": "^10.16.16"
+    "@headlessui/react": "^1.7.18",
+    "class-variance-authority": "^0.7.0"
   },
   "peerDependencies": {
     "react": ">=16",
