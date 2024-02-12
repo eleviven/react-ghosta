@@ -1,6 +1,6 @@
 {
   "name": "react-ghosta",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "React popup alerts. Lightweight, customizable and beautiful by default.",
   "main": "dist/index.js",
