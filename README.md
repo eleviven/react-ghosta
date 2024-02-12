@@ -66,3 +66,9 @@ const App = () => {
 ## Documentation
 
 Find the full API reference on [official documentation](https://react-ghosta.vercel.app/docs).
+
+## TODO
+
+1. ⬜️ Add variant option and bind icon and icon background color to this option
+
+2. ⬜️ Add timer option to close the popup after some time and add showTimerProgressBar option to show progress of timer.
