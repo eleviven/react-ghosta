@@ -24,11 +24,11 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "50 KB"
+      "limit": "30 KB"
     },
     {
       "path": "dist/index.es.js",
-      "limit": "50 KB"
+      "limit": "30 KB"
     }
   ],
   "dependencies": {
