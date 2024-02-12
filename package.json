@@ -16,6 +16,8 @@
     "ghosta"
   ],
   "author": "Firuzcan Hacıyev",
+  "repository": "https://github.com/eleviven/react-ghosta",
+  "bugs": "https://github.com/eleviven/react-ghosta/issues",
   "license": "MIT",
   "size-limit": [
     {
