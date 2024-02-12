@@ -21,11 +21,6 @@ export function convertStringToKebap(string: string) {
     .toLowerCase();
 }
 
-export function cn(...args: unknown[]): string {
-  const filtered = args?.filter((part) => typeof part === 'string');
-  return filtered?.join(' ') || '';
-}
-
 export function isAsync(func: (...args: never[]) => void) {
   if (!func) return false;
   const string = func.toString().trim();

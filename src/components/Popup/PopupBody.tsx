@@ -2,10 +2,10 @@ import type { GhostaPopupBodyProps } from './popup.type';
 
 import React, { useContext } from 'react';
 import { Dialog } from '@headlessui/react';
+import { cx } from 'class-variance-authority';
 
 import { PopupContext } from './Popup';
 import { popupContent } from './popup.variant';
-import { cn } from '../../utils/helpers';
 
 const PopupBody: React.FC<GhostaPopupBodyProps> = ({
   title,
@@ -21,26 +21,26 @@ const PopupBody: React.FC<GhostaPopupBodyProps> = ({
 
   return (
     <div
-      className={cn(
+      className={cx(
         'ghosta__content',
         popupContent({ alignment }),
         classNames?.panelBody
       )}
     >
       {icon ? (
-        <div className={cn('ghosta__content__icon', classNames?.icon)}>
+        <div className={cx('ghosta__content__icon', classNames?.icon)}>
           {icon}
         </div>
       ) : null}
       {title ? (
         <Dialog.Title
-          className={cn('ghosta__content__title', classNames?.title)}
+          className={cx('ghosta__content__title', classNames?.title)}
         >
           {title}
         </Dialog.Title>
       ) : null}
       {description ? (
-        <div className={cn('ghosta__content__desc', classNames?.description)}>
+        <div className={cx('ghosta__content__desc', classNames?.description)}>
           {description}
         </div>
       ) : null}

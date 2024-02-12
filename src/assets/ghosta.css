@@ -17,6 +17,8 @@
 
   --ga-motion-zoomIn: ghostaZoomIn 200ms ease-out forwards;
   --ga-motion-zoomOut: ghostaZoomOut 200ms ease-in forwards;
+  --ga-motion-zoomInHalf: ghostaZoomInHalf 200ms ease-out forwards;
+  --ga-motion-zoomOutHalf: ghostaZoomOutHalf 200ms ease-in forwards;
 }
 
 .ghosta {
@@ -90,7 +92,7 @@
   height: 48px;
   transform: scale(0);
   animation: var(--ga-motion-zoomIn);
-  animation-delay: 75ms;
+  animation-delay: 115ms;
 }
 
 .ghosta__content__title,
@@ -270,23 +272,24 @@
 /* Panel Animation */
 .ghosta__panel--enter {
   transition-timing-function: ease-out;
-  transition-duration: 100ms;
+  transition-duration: 200ms;
 }
 .ghosta__panel--enterFrom {
   opacity: 0;
-  transform: scale(0.6);
+  transform: scale(0.5);
 }
 .ghosta__panel--enterTo {
   opacity: 1;
   transform: scale(1);
 }
 .ghosta__panel--entered {
-  animation: var(--ga-motion-zoomIn);
+  animation: var(--ga-motion-zoomInHalf);
+  animation-duration: 200ms;
 }
 
 .ghosta__panel--leave {
   transition-timing-function: ease-in;
-  transition-duration: 100ms;
+  transition-duration: 150ms;
 }
 .ghosta__panel--leaveFrom {
   opacity: 1;
@@ -294,10 +297,11 @@
 }
 .ghosta__panel--leaveTo {
   opacity: 0;
-  transform: scale(0.6);
+  transform: scale(0.5);
 }
 .ghosta__panel--leaved {
-  animation: var(--ga-motion-zoomOut);
+  animation: var(--ga-motion-zoomOutHalf);
+  animation-duration: 150ms;
 }
 
 /* Backdrop Animation */
@@ -345,5 +349,29 @@
   }
   100% {
     transform: scale(0);
+  }
+}
+
+@keyframes ghostaZoomInHalf {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ghostaZoomOutHalf {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.5);
   }
 }

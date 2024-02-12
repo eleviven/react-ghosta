@@ -2,10 +2,11 @@ import type { GhostaPopupProps } from './popup.type';
 
 import React, { createContext, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import { cx } from 'class-variance-authority';
 
 import { XMarkIcon } from '../icons';
 import { popup } from './popup.variant';
-import { cn, generateCssVariables } from '../../utils/helpers';
+import { generateCssVariables } from '../../utils/helpers';
 
 export const PopupContext = createContext<GhostaPopupProps>(
   {} as GhostaPopupProps
@@ -63,7 +64,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
         as={Dialog}
         show={showPopup}
         onClose={handleClose}
-        className={cn('ghosta ghosta--root', popup({ size, alignment }))}
+        className={cx('ghosta ghosta--root', popup({ size, alignment }))}
         style={generateCssVariables(colors)}
         appear
         unmount
@@ -73,7 +74,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
         {showBackdrop && (
           <Transition.Child
             as="div"
-            className={cn('ghosta__backdrop', classNames?.backdrop)}
+            className={cx('ghosta__backdrop', classNames?.backdrop)}
             aria-hidden="true"
             enter="ghosta__backdrop--enter"
             enterFrom="ghosta__backdrop--enterFrom"
@@ -88,7 +89,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
         <div className="ghosta__scroll-container">
           <Transition.Child
             as={Dialog.Panel}
-            className={cn(
+            className={cx(
               'ghosta__panel',
               classNames?.panel,
               showPopup ? 'ghosta__panel--entered' : 'ghosta__panel--leaved'
@@ -103,7 +104,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
             {/* Close Button */}
             {showCloseButton ? (
               <button
-                className={cn('ghosta__close-button', classNames?.closeButton)}
+                className={cx('ghosta__close-button', classNames?.closeButton)}
                 aria-label="Close"
                 onClick={handleClose}
               >

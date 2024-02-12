@@ -5,11 +5,12 @@ import type {
 } from '../../types';
 
 import React, { useContext, useState } from 'react';
+import { cx } from 'class-variance-authority';
 
 import { PopupContext } from './Popup';
 import Button from '../Button/Button';
 
-import { cn, isAsync } from '../../utils/helpers';
+import { isAsync } from '../../utils/helpers';
 
 const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
   const { onClose, classNames, id: popupId } = useContext(PopupContext);
@@ -42,7 +43,7 @@ const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
   if (!buttons?.length) return null;
 
   return (
-    <div className={cn('ghosta__footer', classNames?.panelFooter)}>
+    <div className={cx('ghosta__footer', classNames?.panelFooter)}>
       {buttons?.map((button, index) => (
         <Button
           key={index}

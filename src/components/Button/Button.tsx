@@ -1,10 +1,10 @@
 import type { ButtonProps } from './button.type';
 
 import React from 'react';
+import { cx } from 'class-variance-authority';
 
 import Spinner from '../Spinner/Spinner';
 
-import { cn } from '../../utils/helpers';
 import { buttonExtend } from './button.variant';
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={cn(
+      className={cx(
         'ghosta__button',
         buttonExtend({ variant, size, classNames }),
         isFilled && 'ghosta__button--filled',
