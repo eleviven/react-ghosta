@@ -2,7 +2,6 @@ import type { GhostaPopupBodyProps } from './popup.type';
 
 import React, { useContext } from 'react';
 import { Dialog } from '@headlessui/react';
-import { motion } from 'framer-motion';
 
 import { PopupContext } from './Popup';
 import { popupContent } from './popup.variant';
@@ -30,13 +29,7 @@ const PopupBody: React.FC<GhostaPopupBodyProps> = ({
     >
       {icon ? (
         <div className={cn('ghosta__content__icon', classNames?.icon)}>
-          <motion.span
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            {icon}
-          </motion.span>
+          {icon}
         </div>
       ) : null}
       {title ? (

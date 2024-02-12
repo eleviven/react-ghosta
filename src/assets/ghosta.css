@@ -1,19 +1,22 @@
 .ghosta--root {
-  --ba-bg-panel: #fff;
+  --ga-bg-panel: #fff;
 
-  --ba-text-close-button: #666;
-  --ba-bg-close-button: transparent;
-  --ba-bg-close-button\:hover: rgba(0, 0, 0, 0.1);
-  --ba-bg-backdrop: rgba(0, 0, 0, 0.3);
+  --ga-text-close-button: #666;
+  --ga-bg-close-button: transparent;
+  --ga-bg-close-button\:hover: rgba(0, 0, 0, 0.1);
+  --ga-bg-backdrop: rgba(0, 0, 0, 0.3);
 
-  --ba-text-icon: #000;
-  --ba-bg-icon: rgba(0, 0, 0, 0.05);
+  --ga-text-icon: #000;
+  --ga-bg-icon: rgba(0, 0, 0, 0.05);
 
-  --ba-text-title: #000;
-  --ba-text-description: #888;
+  --ga-text-title: #000;
+  --ga-text-description: #888;
 
-  --ba-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  --ga-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --ga-motion-zoomIn: ghostaZoomIn 200ms ease-out forwards;
+  --ga-motion-zoomOut: ghostaZoomOut 200ms ease-in forwards;
 }
 
 .ghosta {
@@ -34,10 +37,10 @@
 .ghosta__panel {
   position: relative;
   z-index: 1;
-  background-color: var(--ba-bg-panel);
+  background-color: var(--ga-bg-panel);
   width: 100%;
   border-radius: 16px;
-  font-family: var(--ba-font-family);
+  font-family: var(--ga-font-family);
 }
 
 .ghosta--sm .ghosta__panel {
@@ -76,8 +79,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--ba-text-icon);
-  background-color: var(--ba-bg-icon);
+  color: var(--ga-text-icon);
+  background-color: var(--ga-bg-icon);
   border-radius: 100%;
   margin-top: 16px;
   margin-bottom: 26px;
@@ -85,11 +88,14 @@
 .ghosta__content__icon svg {
   width: 48px;
   height: 48px;
+  transform: scale(0);
+  animation: var(--ga-motion-zoomIn);
+  animation-delay: 75ms;
 }
 
 .ghosta__content__title,
 .ghosta__header__title {
-  color: var(--ba-text-title);
+  color: var(--ga-text-title);
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -98,7 +104,7 @@
 
 .ghosta__content__desc,
 .ghosta__header__desc {
-  color: var(--ba-text-description);
+  color: var(--ga-text-description);
   font-size: 16;
   font-weight: 400;
 }
@@ -125,7 +131,7 @@
   position: fixed;
   z-index: -1;
   inset: 0;
-  background-color: var(--ba-bg-backdrop);
+  background-color: var(--ga-bg-backdrop);
 }
 
 /********** Icon Button **********/
@@ -135,7 +141,7 @@
   padding: 0;
   margin: 12px 12px -16px auto;
 
-  color: var(--ba-text-close-button);
+  color: var(--ga-text-close-button);
   background: transparent;
   border: none;
   display: flex;
@@ -146,7 +152,7 @@
 }
 
 .ghosta__close-button:hover {
-  background-color: var(--ba-bg-close-button\:hover);
+  background-color: var(--ga-bg-close-button\:hover);
 }
 
 /********** Button **********/
@@ -258,4 +264,86 @@
 }
 .ghosta__align--center {
   align-items: center;
+}
+
+/********** Animations **********/
+/* Panel Animation */
+.ghosta__panel--enter {
+  transition-timing-function: ease-out;
+  transition-duration: 100ms;
+}
+.ghosta__panel--enterFrom {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.ghosta__panel--enterTo {
+  opacity: 1;
+  transform: scale(1);
+}
+.ghosta__panel--entered {
+  animation: var(--ga-motion-zoomIn);
+}
+
+.ghosta__panel--leave {
+  transition-timing-function: ease-in;
+  transition-duration: 100ms;
+}
+.ghosta__panel--leaveFrom {
+  opacity: 1;
+  transform: scale(1);
+}
+.ghosta__panel--leaveTo {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.ghosta__panel--leaved {
+  animation: var(--ga-motion-zoomOut);
+}
+
+/* Backdrop Animation */
+.ghosta__backdrop--enter {
+  transition-timing-function: ease-out;
+  transition-duration: 150ms;
+}
+.ghosta__backdrop--enterFrom {
+  opacity: 0;
+}
+.ghosta__backdrop--enterTo {
+  opacity: 1;
+}
+
+.ghosta__backdrop--leave {
+  transition-timing-function: ease-in;
+  transition-duration: 150ms;
+}
+.ghosta__backdrop--leaveFrom {
+  opacity: 1;
+}
+.ghosta__backdrop--leaveTo {
+  opacity: 0;
+}
+
+/********** Keyframes **********/
+@keyframes ghostaZoomIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ghostaZoomOut {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
