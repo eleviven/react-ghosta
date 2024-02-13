@@ -1,6 +1,6 @@
 {
   "name": "react-ghosta",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "description": "React popup alerts. Lightweight, customizable and beautiful by default.",
   "main": "dist/index.js",
@@ -11,6 +11,17 @@
     "size": "size-limit",
     "prettier": "prettier src --write"
   },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react",
     "alert",

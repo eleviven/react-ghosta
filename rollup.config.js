@@ -20,8 +20,8 @@ export default defineConfig({
       exports: 'auto',
     },
     {
-      file: `${name}.es.js`,
-      format: 'es',
+      file: `${name}.mjs`,
+      format: 'esm',
       exports: 'auto',
     },
   ],
