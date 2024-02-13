@@ -1,4 +1,5 @@
 .ghosta--root {
+  --ga-text-panel: #000;
   --ga-bg-panel: #fff;
 
   --ga-text-close-button: #666;
@@ -39,6 +40,7 @@
 .ghosta__panel {
   position: relative;
   z-index: 1;
+  color: var(--ga-text-panel);
   background-color: var(--ga-bg-panel);
   width: 100%;
   border-radius: 16px;
