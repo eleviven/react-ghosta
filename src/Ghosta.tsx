@@ -61,6 +61,10 @@ const Ghosta: React.FC<GhostaProps> = ({
   const totalPopupsLength = popups.length;
 
   return popups.map((popup, index) => {
+    if (popup.preventClose === undefined) {
+      popup.preventClose = index < totalPopupsLength - 1;
+    }
+
     return (
       <Popup
         key={popup.id}
@@ -70,7 +74,6 @@ const Ghosta: React.FC<GhostaProps> = ({
         colors={Object.assign({}, colors, popup.colors)}
         classNames={Object.assign({}, classNames, popup.classNames)}
         animationOptions={animationOptions}
-        preventClose={index < totalPopupsLength - 1}
       >
         <PopupHeader
           title={popup.headerTitle}

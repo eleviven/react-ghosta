@@ -39,6 +39,8 @@ export type GhostaOptions = {
 
   alignment: GhostaPopupAlignment;
   showCloseButton: boolean;
+  preventClose: boolean;
+
   size: GhostaPopupProps['size'];
   colors: Partial<GhostaPopupElementColors>;
   classNames: Partial<GhostaPopupClassNames>;

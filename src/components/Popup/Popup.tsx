@@ -23,7 +23,6 @@ const Popup: React.FC<GhostaPopupProps> = ({
   showCloseButton,
   colors,
   classNames,
-  // animationOptions, // Work inprogress
   showBackdrop = true,
   preventClose,
   onClose,
