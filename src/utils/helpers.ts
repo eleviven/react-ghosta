@@ -21,8 +21,11 @@ export function convertStringToKebap(string: string) {
     .toLowerCase();
 }
 
-export function isAsync(func: (...args: never[]) => void) {
-  if (!func) return false;
-  const string = func.toString().trim();
-  return !!(string.match(/^async /) || string.match(/return _ref[^.]*\.apply/));
+export function isAsync(func: (...args: any) => any): boolean {
+  // Check if the function is an async function
+  if (func.constructor.name === 'AsyncFunction') {
+    return true;
+  }
+  const result = func();
+  return result instanceof Promise;
 }
