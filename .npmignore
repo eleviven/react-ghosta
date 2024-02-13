@@ -13,6 +13,6 @@ src/
 node_modules
 package-lock.json
 
-rollup.config.ts
+rollup.config.js
 tsconfig.json
 .babelrc
