@@ -22,10 +22,10 @@ export function convertStringToKebap(string: string) {
 }
 
 export function isAsync(func: (...args: any) => any): boolean {
+  if (typeof func !== 'function') return false;
   // Check if the function is an async function
-  if (func.constructor.name === 'AsyncFunction') {
-    return true;
-  }
+  if (func?.constructor?.name === 'AsyncFunction') return true;
+
   const result = func();
   return result instanceof Promise;
 }
