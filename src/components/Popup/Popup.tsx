@@ -1,6 +1,6 @@
 import type { GhostaPopupProps } from './popup.type';
 
-import React, { createContext, useEffect, useState } from 'react';
+import * as React from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { cx } from 'class-variance-authority';
 
@@ -8,7 +8,7 @@ import { XMarkIcon } from '../icons';
 import { popup } from './popup.variant';
 import { generateCssVariables } from '../../utils/helpers';
 
-export const PopupContext = createContext<GhostaPopupProps>(
+export const PopupContext = React.createContext<GhostaPopupProps>(
   {} as GhostaPopupProps
 );
 
@@ -27,7 +27,7 @@ const Popup: React.FC<GhostaPopupProps> = ({
   preventClose,
   onClose,
 }) => {
-  const [showPopup, setShowPopup] = useState(isVisible);
+  const [showPopup, setShowPopup] = React.useState(isVisible);
 
   const handleClose = () => {
     if (preventClose) return;
@@ -35,11 +35,11 @@ const Popup: React.FC<GhostaPopupProps> = ({
     closeTimeout = setTimeout(onClose, 250);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     setShowPopup(isVisible);
   }, [isVisible]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     return () => clearTimeout(closeTimeout);
   }, []);
 

@@ -1,6 +1,6 @@
 import type { ButtonProps } from './button.type';
 
-import React from 'react';
+import * as React from 'react';
 import { cx } from 'class-variance-authority';
 
 import Spinner from '../Spinner/Spinner';

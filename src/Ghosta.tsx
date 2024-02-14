@@ -1,6 +1,6 @@
 import type { GhostaActions, GhostaOptions, GhostaProps } from './types';
 
-import React, { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 
 import { GhostaManager } from './GhostaManager';
 import { generateRandomInt } from './utils/helpers';
@@ -16,7 +16,7 @@ const Ghosta: React.FC<GhostaProps> = ({
   animationOptions,
 }) => {
   // State
-  const [popups, setPopups] = useState<GhostaOptions[]>([]);
+  const [popups, setPopups] = React.useState<GhostaOptions[]>([]);
 
   // Actions
   const fire = (options: GhostaOptions) => {
@@ -37,22 +37,22 @@ const Ghosta: React.FC<GhostaProps> = ({
   };
 
   // Hooks
-  // Butalert Ref
-  const butalert = useRef<GhostaActions>({
+  // Ghosta Ref
+  const ghosta = React.useRef<GhostaActions>({
     id: generateRandomInt(),
     fire,
     close,
     closeAll,
   });
 
-  // Register Butalert
-  useEffect(() => {
-    if (!butalert.current) return;
-    const butalertId = butalert.current.id;
+  // Register Ghosta
+  React.useEffect(() => {
+    if (!ghosta.current) return;
+    const ghostaId = ghosta.current.id;
 
-    GhostaManager.register(butalert.current);
+    GhostaManager.register(ghosta.current);
     return () => {
-      GhostaManager.unregister(butalertId);
+      GhostaManager.unregister(ghostaId);
     };
   }, []);
 

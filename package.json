@@ -1,23 +1,24 @@
 {
   "name": "react-ghosta",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "type": "module",
   "description": "React popup alerts. Lightweight, customizable and beautiful by default.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && rollup -c",
-    "build/publish": "npm run build && npm publish",
+    "start": "tsup --watch",
+    "build": "rm -rf dist && tsup",
     "size": "size-limit",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "tsc": "tsc"
   },
   "exports": {
     "./package.json": "./package.json",
     "./dist/*": "./dist/*",
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
@@ -53,26 +54,16 @@
     "react-dom": ">=16"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
-    "@babel/preset-env": "^7.23.6",
-    "@babel/preset-react": "^7.23.3",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
     "@size-limit/preset-small-lib": "^11.0.2",
+    "@types/node": "^20.11.17",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "@types/rollup-plugin-peer-deps-external": "^2.2.4",
     "husky": "^9.0.10",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.10.0",
-    "rollup-plugin-import-css": "^3.4.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-ts": "^3.4.5",
     "size-limit": "^11.0.2",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   }
 }

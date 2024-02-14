@@ -12,6 +12,7 @@ src/
 
 node_modules
 package-lock.json
+pnpm-lock.yaml
 
 rollup.config.js
 tsconfig.json

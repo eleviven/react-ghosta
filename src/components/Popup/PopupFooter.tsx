@@ -4,7 +4,7 @@ import type {
   GhostaButtonOptions,
 } from '../../types';
 
-import React, { useContext, useState } from 'react';
+import * as React from 'react';
 import { cx } from 'class-variance-authority';
 
 import { PopupContext } from './Popup';
@@ -13,8 +13,8 @@ import Button from '../Button/Button';
 import { isAsync } from '../../utils/helpers';
 
 const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
-  const { onClose, classNames, id: popupId } = useContext(PopupContext);
-  const [loadingIds, setLoadingIds] = useState<Record<number, boolean>>({});
+  const { onClose, classNames, id: popupId } = React.useContext(PopupContext);
+  const [loadingIds, setLoadingIds] = React.useState<Record<number, boolean>>({});
 
   const handleChangeLoadingIds = (id: number, value: boolean) => {
     setLoadingIds((prev) => ({ ...prev, [id]: value }));

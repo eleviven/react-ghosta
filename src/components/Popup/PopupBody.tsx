@@ -1,6 +1,6 @@
 import type { GhostaPopupBodyProps } from './popup.type';
 
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { Dialog } from '@headlessui/react';
 import { cx } from 'class-variance-authority';
 
@@ -13,7 +13,7 @@ const PopupBody: React.FC<GhostaPopupBodyProps> = ({
   icon,
   content,
 }) => {
-  const { alignment, classNames } = useContext(PopupContext);
+  const { alignment, classNames } = React.useContext(PopupContext);
 
   if (!title && !description && !icon && !content) {
     return <div className="ghosta__nocontent" />;

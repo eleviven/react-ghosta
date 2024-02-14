@@ -1,6 +1,6 @@
-import React, { type SVGProps } from 'react';
+import * as React from 'react';
 
-const Spinner: React.FC<SVGProps<SVGSVGElement>> = (props) => (
+const Spinner: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
