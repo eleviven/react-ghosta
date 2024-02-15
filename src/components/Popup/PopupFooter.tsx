@@ -14,7 +14,9 @@ import { isAsync } from '../../utils/helpers';
 
 const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
   const { onClose, classNames, id: popupId } = React.useContext(PopupContext);
-  const [loadingIds, setLoadingIds] = React.useState<Record<number, boolean>>({});
+  const [loadingIds, setLoadingIds] = React.useState<Record<number, boolean>>(
+    {}
+  );
 
   const handleChangeLoadingIds = (id: number, value: boolean) => {
     setLoadingIds((prev) => ({ ...prev, [id]: value }));
