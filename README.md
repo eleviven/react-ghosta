@@ -6,7 +6,8 @@
 
 <div align="center">
   <img src="https://badgen.net/npm/v/react-ghosta" alt="NPM Version" />
-  <img src="https://badgen.net/bundlephobia/minzip/react-ghosta" alt="minzipped size"/>
+  <img src="https://badgen.net/npm/dm/react-ghosta" alt="Monthly Downloads"/>
+  <img src="https://badgen.net/npm/license/react-ghosta" alt="License"/>
 </div>
 
 <br />
