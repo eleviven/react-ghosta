@@ -22,9 +22,8 @@ export type GhostaActions = {
   closeAll: () => void;
 };
 
-export type GhostaOptions = {
+export type GhostaOptions = Partial<{
   id: number;
-} & Partial<{
   title: string;
   description: string;
 
