@@ -1,8 +1,5 @@
 import type { GhostaPopupFooterProps } from './popup.type';
-import type {
-  GhostaButtonActionParams,
-  GhostaButtonOptions,
-} from '../../types';
+import type { GhostaPopupContext, GhostaButtonOptions } from '../../types';
 
 import * as React from 'react';
 import { cx } from 'class-variance-authority';
@@ -23,7 +20,7 @@ const PopupFooter: React.FC<GhostaPopupFooterProps> = ({ buttons }) => {
   };
 
   const handleClick = async (button: GhostaButtonOptions, index: number) => {
-    const params: GhostaButtonActionParams = {
+    const params: GhostaPopupContext = {
       popupId,
       onClose,
     };

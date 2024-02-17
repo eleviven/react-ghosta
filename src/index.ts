@@ -1,3 +1,3 @@
-export { default as Ghosta } from './Ghosta';
+export { default as GhostaContainer } from './GhostaContainer';
 export * as ghosta from './actions';
 export * from './types';

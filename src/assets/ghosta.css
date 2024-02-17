@@ -100,16 +100,18 @@
 .ghosta__content__title,
 .ghosta__header__title {
   color: var(--ga-text-title);
+  margin: 0;
+  line-height: 1.5;
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 8px;
-  margin-top: 0;
 }
 
 .ghosta__content__desc,
 .ghosta__header__desc {
   color: var(--ga-text-description);
-  font-size: 16;
+  margin-top: 2.5px;
+  line-height: 1.5;
+  font-size: 16px;
   font-weight: 400;
 }
 

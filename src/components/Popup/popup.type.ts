@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { GhostaAnimationOptions, GhostaButtonOptions } from '../../types';
+import type { GhostaButtonOptions } from '../../types';
 import { popup } from './popup.variant';
 
 export type GhostaPopupProps = VariantProps<typeof popup> & {
@@ -9,7 +9,6 @@ export type GhostaPopupProps = VariantProps<typeof popup> & {
   showCloseButton?: boolean;
   classNames?: Partial<GhostaPopupClassNames> | null;
   colors?: Partial<GhostaPopupElementColors> | null;
-  animationOptions?: Partial<GhostaAnimationOptions>;
   showBackdrop?: boolean;
   preventClose?: boolean;
   onClose: () => void;

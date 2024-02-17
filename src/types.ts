@@ -9,21 +9,22 @@ import type {
   GhostaPopupAlignment,
 } from './components/Popup/popup.type';
 
-export type GhostaProps = {
-  classNames?: Partial<GhostaPopupClassNames>;
-  colors?: Partial<GhostaPopupElementColors>;
-  animationOptions?: Partial<GhostaAnimationOptions>;
-};
+export type GhostaPopupID = number;
 
 export type GhostaActions = {
   id: number;
-  fire: (options: GhostaOptions) => void;
-  close: (id: number) => void;
-  closeAll: () => void;
+  fire: (options: GhostaOptions) => GhostaPopupID;
+  close: (id?: GhostaPopupID) => void;
+};
+
+export type GhostaContainerProps = {
+  classNames?: Partial<GhostaPopupClassNames>;
+  colors?: Partial<GhostaPopupElementColors>;
 };
 
 export type GhostaOptions = Partial<{
-  id: number;
+  id: GhostaPopupID;
+
   title: string;
   description: string;
 
@@ -51,20 +52,10 @@ export type GhostaButtonOptions = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isFilled?: boolean;
-  onClick?: (params: GhostaButtonActionParams) => void | Promise<void>;
+  onClick?: (params: GhostaPopupContext) => void | Promise<void>;
 };
 
-export type GhostaButtonActionParams = {
+export type GhostaPopupContext = {
   popupId: number;
   onClose: () => void;
 };
-
-export type GhostaAnimationOptions = Record<
-  'open' | 'close',
-  {
-    delay?: number;
-    elapsed?: number;
-    type?: 'decay' | 'spring' | 'keyframes' | 'tween' | 'inertia';
-    duration?: number;
-  }
->;
