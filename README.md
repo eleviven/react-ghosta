@@ -49,8 +49,8 @@ npm install react-ghosta
 Add the Ghosta and ghosta.css to your app first. It will take care of rendering all alerts emitted. Now you can trigger `ghosta.fire()` from anywhere!
 
 ```jsx
-import { Ghosta, ghosta } from 'react-ghosta';
-import "react-ghosta/dist/ghosta.css";
+import { GhostaContainer, ghosta } from 'react-ghosta';
+import 'react-ghosta/dist/ghosta.css';
 
 const handleShowAlert = () => ghosta.fire({ title: 'Here is your alert.' });
 
@@ -58,7 +58,7 @@ const App = () => {
   return (
     <div>
       <button onClick={handleShowAlert}>Show me an Alert</button>
-      <Ghosta />
+      <GhostaContainer />
     </div>
   );
 };
