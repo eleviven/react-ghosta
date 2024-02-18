@@ -1,4 +1,9 @@
-import type { GhostaActions, GhostaOptions, GhostaProps } from './types';
+import type {
+  GhostaActions,
+  GhostaOptions,
+  GhostaContainerProps,
+  GhostaPopupID,
+} from './types';
 
 import * as React from 'react';
 
@@ -10,30 +15,31 @@ import PopupHeader from './components/Popup/PopupHeader';
 import PopupBody from './components/Popup/PopupBody';
 import PopupFooter from './components/Popup/PopupFooter';
 
-const Ghosta: React.FC<GhostaProps> = ({
+const GhostaContainer: React.FC<GhostaContainerProps> = ({
   classNames,
   colors,
-  animationOptions,
 }) => {
   // State
   const [popups, setPopups] = React.useState<GhostaOptions[]>([]);
 
   // Actions
-  const fire = (options: GhostaOptions) => {
+  const fire = (options: GhostaOptions): GhostaPopupID => {
+    const id = generateRandomInt();
     setPopups((prev) =>
       prev.concat({
         ...options,
-        id: generateRandomInt(),
+        id,
       })
     );
+    return id;
   };
 
-  const close = (id: number) => {
-    setPopups((prev) => prev.filter((popup) => popup.id !== id));
-  };
-
-  const closeAll = () => {
-    setPopups([]);
+  const close = (id: GhostaOptions['id']) => {
+    if (id) {
+      setPopups((prev) => prev.filter((popup) => popup.id !== id));
+    } else {
+      setPopups([]);
+    }
   };
 
   // Hooks
@@ -42,7 +48,6 @@ const Ghosta: React.FC<GhostaProps> = ({
     id: generateRandomInt(),
     fire,
     close,
-    closeAll,
   });
 
   // Register Ghosta
@@ -71,12 +76,11 @@ const Ghosta: React.FC<GhostaProps> = ({
       <Popup
         key={popupId}
         isVisible
-        onClose={() => close(popupId!)}
+        onClose={() => close(popupId)}
         {...popup}
         id={popupId}
         colors={Object.assign({}, colors, popup.colors)}
         classNames={Object.assign({}, classNames, popup.classNames)}
-        animationOptions={animationOptions}
       >
         <PopupHeader
           title={popup.headerTitle}
@@ -96,4 +100,4 @@ const Ghosta: React.FC<GhostaProps> = ({
   });
 };
 
-export default Ghosta;
+export default GhostaContainer;

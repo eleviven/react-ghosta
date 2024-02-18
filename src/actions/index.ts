@@ -1,2 +1,2 @@
 export { default as fire } from './ghosta.fire';
-export { default as closeAll } from './ghosta.closeAll';
+export { default as close } from './ghosta.close';

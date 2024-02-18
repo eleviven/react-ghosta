@@ -8,7 +8,7 @@ const PopupHeader: React.FC<GhostaPopupHeaderProps> = ({
   description,
 }) => {
   const { classNames } = React.useContext(PopupContext);
-  if (!title || !description) return null;
+  if (!title && !description) return null;
 
   return (
     <div className={cx('ghosta__header', classNames?.panelHeader)}>
