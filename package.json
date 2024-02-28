@@ -1,6 +1,6 @@
 {
   "name": "react-ghosta",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "type": "module",
   "description": "React popup alerts. Lightweight, customizable and beautiful by default.",
   "main": "dist/index.js",
@@ -15,11 +15,13 @@
   },
   "exports": {
     "./package.json": "./package.json",
-    "./dist/*": "./dist/*",
+    "./dist/ghosta.css": "./dist/ghosta.css",
+    "./dist/index.d.ts": "./dist/index.d.ts",
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
     }
   },
   "files": [
@@ -35,6 +37,7 @@
   "author": "Firuzcan Hacıyev",
   "repository": "https://github.com/eleviven/react-ghosta",
   "bugs": "https://github.com/eleviven/react-ghosta/issues",
+  "homepage": "https://react-ghosta.vercel.app",
   "license": "MIT",
   "size-limit": [
     {
